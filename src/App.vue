@@ -12,8 +12,34 @@
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  mehtods: {
+    checkInstalledSW: function() {
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          // @ts-ignore
+          navigator.serviceWorker.register('/sw.js')
+            // @ts-ignore
+            .then(function(registration) {
+              // 登録成功
+              console.log('ServiceWorker 登録成功: ', registration.scope);
+            })
+            // @ts-ignore
+            .catch(function(err) {
+              // 登録失敗 :(
+              console.log('ServiceWorker 登録失敗: ', err);
+            });
+        });
+      } else {
+        console.log('nothin');
+      }
+    }
+  },
+  mounted: {
+    checkInstalledSW();
+  }
 }
+
 </script>
 
 <style>
