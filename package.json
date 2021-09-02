@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "node build/dev-server.js",
     "start": "http-server dist",
-    "build": "node ./webpack.config.js",
+    "build": "node build/build.js",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
@@ -18,6 +18,7 @@
     "sw-precache-webpack-plugin": "^1.0.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
+    "workbox-build": "^6.2.4",
     "workbox-sw": "^6.2.4"
   },
   "devDependencies": {
