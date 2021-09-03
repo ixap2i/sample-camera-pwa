@@ -79,7 +79,7 @@ export default {
             codeRepetition: true,
             tryVertical: true,
             frameRate: 15,
-            width: 480,
+            width: 320,
             height: 220,
             facingMode: "environment"
           }
@@ -186,9 +186,9 @@ export default {
 #canvas {
   border: solid black 1px;
   /* width: 640px; */
-  /* width: 320px; */
+  width: 320px;
   /* height: 480px; */
-  /* height: 240px; */
+  height: 240px;
 }
 @media screen and (max-width: 480px) {
   .drawingBuffer {
